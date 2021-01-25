@@ -46,8 +46,8 @@ export const MenuSection = styled.div<OpenDisplay>`
 
         .nav a {
           transition-duration: 0.5s;
-          font-size: 2rem;
-          font-weight: 600;
+          font-size: 1.5rem;
+          font-weight: 500;
           line-height: 8rem;
         }
 
@@ -57,7 +57,7 @@ export const MenuSection = styled.div<OpenDisplay>`
           top: 30px;
 
           .one {
-            transform: rotate(45deg) translate(7px, 7px);
+            transform: rotate(45deg) translate(4px, 6px);
           }
 
           .two {
@@ -65,7 +65,7 @@ export const MenuSection = styled.div<OpenDisplay>`
           }
 
           .three {
-            transform: rotate(-45deg) translate(8px, -9px);
+            transform: rotate(-45deg) translate(5px, -9px);
           }
         }
       `
@@ -81,7 +81,7 @@ export const MenuToggle = styled.div`
   .two,
   .three {
     width: 100%;
-    height: 5px;
+    height: 2px;
 
     background: ${props => props.theme.colors.textDark};
 
