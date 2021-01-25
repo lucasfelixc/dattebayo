@@ -13,4 +13,8 @@ export default createGlobalStyle`
     font: 400 16px Roboto, sans-serif;
   }
 
+  a {
+    text-decoration: none;
+    color: ${props => props.theme.colors.textDark}
+  }
 `
