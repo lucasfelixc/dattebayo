@@ -6,7 +6,7 @@ import {
   Container,
   MenuSection,
   MenuToggle
-} from '../../../styles/pages/components/Header/style'
+} from '../../../styles/pages/components/Header'
 
 const Header: React.FC = () => {
   const [on, setOn] = useState(false)

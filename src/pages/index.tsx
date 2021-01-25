@@ -1,7 +1,8 @@
-import { Container } from '../styles/pages/Home/style'
+import { Container } from '../styles/pages/Home'
 
 import Header from './Components/Header'
 import Main from './Components/Main'
+import Bottom from './Components/Bottom'
 
 const Home: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
         <div className="line"></div>
       </div>
       <Main />
+      <Bottom />
     </Container>
   )
 }

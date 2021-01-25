@@ -17,4 +17,9 @@ export default createGlobalStyle`
     text-decoration: none;
     color: ${props => props.theme.colors.textDark}
   }
+
+  button {
+    border: none;
+    outline: none;
+  }
 `
