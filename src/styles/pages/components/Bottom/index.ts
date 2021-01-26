@@ -1,10 +1,16 @@
 import styled, { css, keyframes } from 'styled-components'
 
 const slideMoreInfo = keyframes`
-  100% {
-    transform: translateY(-15px)
+  to {
+    transform: translateY(-60vh)
   }
 `
+
+// const slideLessInfo = keyframes`
+//   to {
+//     transform: translateY(0)
+//   }
+// `
 
 interface showMore {
   more: boolean
@@ -16,8 +22,6 @@ export const Container = styled.div<showMore>`
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   background: ${props => props.theme.colors.backgroundLight};
   box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.25);
@@ -25,7 +29,7 @@ export const Container = styled.div<showMore>`
 
   .moreInfo {
     width: 100%;
-    height: 30%;
+    height: 60px;
 
     border-radius: 40px 40px 0 0;
 
@@ -54,7 +58,7 @@ export const Container = styled.div<showMore>`
 
   .content {
     width: 100%;
-    height: 70%;
+    height: auto;
 
     display: flex;
     justify-content: space-between;
@@ -77,15 +81,68 @@ export const Container = styled.div<showMore>`
     }
   }
 
+  .synopsis {
+    width: 100%;
+    height: 50%;
+
+    margin-top: 20px;
+    padding: 0 20px;
+
+    overflow-y: scroll;
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  .indicators {
+    width: 100%;
+    height: 50px;
+
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .relevant {
+      width: 70px;
+      height: 35px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 15px;
+
+      background: ${props => props.theme.colors.primary};
+
+      span {
+        color: #e1e1e6;
+        font-weight: 600;
+      }
+    }
+
+    .ageRating {
+      color: ${props => props.theme.colors.secondary};
+      font-weight: 600;
+    }
+  }
+
+  .shadow {
+    display: none;
+  }
+
   ${props => {
     if (props.more) {
       return css`
-        position: absolute;
-
         height: 80vh;
+
+        position: absolute;
         z-index: 20;
 
-        animation: ${slideMoreInfo} 0.3 ease-out forwards;
+        animation: ${slideMoreInfo} 0.3s ease-in-out forwards;
       `
     }
   }}

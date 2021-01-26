@@ -24,15 +24,17 @@ export const Content = styled.div`
   height: 90%;
 
   display: grid;
+  justify-items: center;
 
-  grid-template-rows: 45% 45%;
   grid-template-columns: 50% 50%;
   grid-row-gap: 15px;
 
+  overflow-y: scroll;
+
   .top {
     width: 85%;
+    height: 200px;
 
-    margin-left: 15px;
     border-radius: 5px;
 
     background: #c4c4c4;
