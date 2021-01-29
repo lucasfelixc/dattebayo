@@ -12,6 +12,12 @@ const Home: React.FC = () => {
   const [animes, setAnimes] = useState([])
   const [mangas, setMangas] = useState([])
 
+  const [title, setTitle] = useState('')
+  const [idYoutube, setIdYoutube] = useState('')
+  const [averagea, setAveragea] = useState('')
+  const [age, setAge] = useState('')
+  const [synopsis, setSynopsis] = useState('')
+
   const average = []
 
   useEffect(() => {
@@ -24,8 +30,18 @@ const Home: React.FC = () => {
     })
   }, [])
 
-  const returnValues = (e: string) => {
-    console.log(e)
+  const returnValues = (
+    title: string,
+    idYoutube: string,
+    average: string,
+    age: string,
+    synopsis: string
+  ) => {
+    setTitle(title)
+    setIdYoutube(idYoutube)
+    setAveragea(average)
+    setAge(age)
+    setSynopsis(synopsis)
   }
 
   animes.map(value => {
@@ -40,8 +56,6 @@ const Home: React.FC = () => {
     return b.attributes.averageRating - a.attributes.averageRating
   })
 
-  console.log(average)
-
   return (
     <Container>
       <Header />
@@ -49,7 +63,13 @@ const Home: React.FC = () => {
         <div className="line"></div>
       </div>
       <Main sendInfo={returnValues} arrContent={average.slice(0, 4)} />
-      <Bottom />
+      <Bottom
+        title={title}
+        idYouTube={idYoutube}
+        averageRating={averagea}
+        ageRatingGuide={age}
+        synopsis={synopsis}
+      />
     </Container>
   )
 }

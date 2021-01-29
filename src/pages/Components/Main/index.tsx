@@ -4,7 +4,13 @@ import Image from 'next/image'
 import { Container, Content } from '../../../styles/pages/components/Main'
 
 interface content {
-  sendInfo: (e: string) => void
+  sendInfo: (
+    title: string,
+    idYt: string,
+    average: string,
+    age: string,
+    synopsis: string
+  ) => void
 
   arrContent: Array<{
     attributes: {
@@ -19,6 +25,10 @@ interface content {
         en_jp: string
       }
       canonicalTitle: string
+      youtubeVideoId: string
+      averageRating: string
+      ageRatingGuide: string
+      synopsis: string
     }
   }>
 }
@@ -40,9 +50,21 @@ const Main: React.FC<content> = ({ arrContent, sendInfo }) => {
               key={index}
               onClick={() => {
                 if (value.attributes.titles.en === null) {
-                  sendInfo(value.attributes.titles.en_jp)
+                  sendInfo(
+                    value.attributes.titles.en_jp,
+                    value.attributes.youtubeVideoId,
+                    value.attributes.averageRating,
+                    value.attributes.ageRatingGuide,
+                    value.attributes.synopsis
+                  )
                 } else {
-                  sendInfo(value.attributes.titles.en)
+                  sendInfo(
+                    value.attributes.titles.en,
+                    value.attributes.youtubeVideoId,
+                    value.attributes.averageRating,
+                    value.attributes.ageRatingGuide,
+                    value.attributes.synopsis
+                  )
                 }
               }}
             >

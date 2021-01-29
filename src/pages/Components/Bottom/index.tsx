@@ -1,8 +1,25 @@
-import { Container } from '../../../styles/pages/components/Bottom'
-import PlayMin from '../../../assets/icons/playmin.svg'
 import { useState } from 'react'
+import Link from 'next/link'
 
-const Bottom: React.FC = () => {
+import { Container } from '../../../styles/pages/components/Bottom'
+
+import PlayMin from '../../../assets/icons/playmin.svg'
+
+interface content {
+  title: string
+  idYouTube: string
+  averageRating: string
+  ageRatingGuide: string
+  synopsis: string
+}
+
+const Bottom: React.FC<content> = ({
+  title,
+  idYouTube,
+  averageRating,
+  ageRatingGuide,
+  synopsis
+}) => {
   const [moreInfo, setMoreInfo] = useState(false)
 
   const handleClickInfo = () => {
@@ -17,8 +34,9 @@ const Bottom: React.FC = () => {
         </button>
       </div>
       <div className="content">
-        <div className="title"></div>
+        <div className="title">{title}</div>
         <button className="play">
+          <a href={`https://www.youtube.com/watch?v=${idYouTube}`} />
           <PlayMin />
         </button>
       </div>
@@ -27,33 +45,14 @@ const Bottom: React.FC = () => {
         <>
           <div className="indicators">
             <div className="relevant">
-              <span>80.6%</span>
+              <span>{`${averageRating}%`}</span>
             </div>
             <div className="ageRating">
-              <span>Teens 13 or olders</span>
+              <span>{ageRatingGuide}</span>
             </div>
           </div>
           <div className="synopsis">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-              culpa qui officia deserunt mollit anim id est laborum.
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-              culpa qui officia deserunt mollit anim id est laborum.
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <p>{synopsis}</p>
           </div>
         </>
       )}
