@@ -69,10 +69,12 @@ export const Container = styled.div<showMore>`
     padding: 0 15px;
 
     .title {
-      width: 150px;
+      width: 250px;
       height: 30px;
 
-      background: #c4c4c4;
+      strong {
+        font-size: 1.3rem;
+      }
     }
 
     button {
@@ -80,6 +82,11 @@ export const Container = styled.div<showMore>`
       height: 48px;
 
       background: none;
+
+      a {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 

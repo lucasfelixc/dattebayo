@@ -7,7 +7,7 @@ import PlayMin from '../../../assets/icons/playmin.svg'
 
 interface content {
   title: string
-  idYouTube: string
+  youtubeVideoId: string
   averageRating: string
   ageRatingGuide: string
   synopsis: string
@@ -15,12 +15,18 @@ interface content {
 
 const Bottom: React.FC<content> = ({
   title,
-  idYouTube,
+  youtubeVideoId,
   averageRating,
   ageRatingGuide,
   synopsis
 }) => {
   const [moreInfo, setMoreInfo] = useState(false)
+
+  console.log(title)
+  console.log(youtubeVideoId)
+  console.log(averageRating)
+  console.log(ageRatingGuide)
+  console.log(synopsis)
 
   const handleClickInfo = () => {
     setMoreInfo(!moreInfo)
@@ -34,11 +40,15 @@ const Bottom: React.FC<content> = ({
         </button>
       </div>
       <div className="content">
-        <div className="title">{title}</div>
-        <button className="play">
-          <a href={`https://www.youtube.com/watch?v=${idYouTube}`} />
+        <div className="title">
+          <strong>{title}</strong>
+        </div>
+        <Link
+          href={`https://www.youtube.com/watch?v=${youtubeVideoId}`}
+          passHref={true}
+        >
           <PlayMin />
-        </button>
+        </Link>
       </div>
       <div className="shadow" onClick={handleClickInfo}></div>
       {moreInfo && (

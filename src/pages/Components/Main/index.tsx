@@ -6,7 +6,7 @@ import { Container, Content } from '../../../styles/pages/components/Main'
 interface content {
   sendInfo: (
     title: string,
-    idYt: string,
+    youtubeVideoId: string,
     average: string,
     age: string,
     synopsis: string
@@ -54,7 +54,10 @@ const Main: React.FC<content> = ({ arrContent, sendInfo }) => {
                     value.attributes.titles.en_jp,
                     value.attributes.youtubeVideoId,
                     value.attributes.averageRating,
-                    value.attributes.ageRatingGuide,
+                    value.attributes.ageRatingGuide === null ||
+                      value.attributes.ageRatingGuide === ''
+                      ? '10+'
+                      : value.attributes.ageRatingGuide,
                     value.attributes.synopsis
                   )
                 } else {
@@ -62,7 +65,10 @@ const Main: React.FC<content> = ({ arrContent, sendInfo }) => {
                     value.attributes.titles.en,
                     value.attributes.youtubeVideoId,
                     value.attributes.averageRating,
-                    value.attributes.ageRatingGuide,
+                    value.attributes.ageRatingGuide === null ||
+                      value.attributes.ageRatingGuide === ''
+                      ? '10+'
+                      : value.attributes.ageRatingGuide,
                     value.attributes.synopsis
                   )
                 }

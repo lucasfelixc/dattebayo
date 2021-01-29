@@ -32,13 +32,13 @@ const Home: React.FC = () => {
 
   const returnValues = (
     title: string,
-    idYoutube: string,
+    youtubeVideoId: string,
     average: string,
     age: string,
     synopsis: string
   ) => {
     setTitle(title)
-    setIdYoutube(idYoutube)
+    setIdYoutube(youtubeVideoId)
     setAveragea(average)
     setAge(age)
     setSynopsis(synopsis)
@@ -65,7 +65,7 @@ const Home: React.FC = () => {
       <Main sendInfo={returnValues} arrContent={average.slice(0, 4)} />
       <Bottom
         title={title}
-        idYouTube={idYoutube}
+        youtubeVideoId={idYoutube}
         averageRating={averagea}
         ageRatingGuide={age}
         synopsis={synopsis}
