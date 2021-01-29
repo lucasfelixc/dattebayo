@@ -38,5 +38,9 @@ export const Content = styled.div`
     border-radius: 5px;
 
     background: #c4c4c4;
+
+    img {
+      border-radius: 5px;
+    }
   }
 `

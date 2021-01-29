@@ -24,6 +24,10 @@ const Home: React.FC = () => {
     })
   }, [])
 
+  const returnValues = (e: string) => {
+    console.log(e)
+  }
+
   animes.map(value => {
     return average.push(value)
   })
@@ -44,7 +48,7 @@ const Home: React.FC = () => {
       <div className="contentLine">
         <div className="line"></div>
       </div>
-      <Main arrContent={average} />
+      <Main sendInfo={returnValues} arrContent={average.slice(0, 4)} />
       <Bottom />
     </Container>
   )
