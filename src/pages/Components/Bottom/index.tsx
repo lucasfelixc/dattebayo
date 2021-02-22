@@ -29,7 +29,11 @@ const Bottom: React.FC<content> = ({
   console.log(synopsis)
 
   const handleClickInfo = () => {
-    setMoreInfo(!moreInfo)
+    if (title) {
+      setMoreInfo(!moreInfo)
+    } else {
+      setMoreInfo(false)
+    }
   }
 
   return (
