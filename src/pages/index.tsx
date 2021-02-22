@@ -56,13 +56,15 @@ const Home: React.FC = () => {
     return b.attributes.averageRating - a.attributes.averageRating
   })
 
+  const updatedAverage = average.slice(0, 4)
+
   return (
     <Container>
       <Header />
       <div className="contentLine">
         <div className="line"></div>
       </div>
-      <Main sendInfo={returnValues} arrContent={average.slice(0, 4)} />
+      <Main sendInfo={returnValues} arrContent={updatedAverage} />
       <Bottom
         title={title}
         youtubeVideoId={idYoutube}

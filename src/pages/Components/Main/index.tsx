@@ -36,6 +36,7 @@ interface content {
 const Main: React.FC<content> = ({ arrContent, sendInfo }) => {
   const { pathname } = useRouter()
   const contentProductions = arrContent
+  console.log(arrContent)
 
   return (
     <Container>
