@@ -28,8 +28,8 @@ const Header: React.FC = () => {
         </MenuToggle>
 
         <div className="nav">
-          <Link href="#">Animes</Link>
-          <Link href="#">Mangás</Link>
+          <Link href="/#">Animes</Link>
+          <Link href="/#">Mangás</Link>
         </div>
       </MenuSection>
     </Container>

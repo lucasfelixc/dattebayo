@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 import { Container, Content } from '../../../styles/pages/components/Main'
+import { useEffect, useState } from 'react'
 
 interface content {
   sendInfo: (
@@ -34,9 +35,15 @@ interface content {
 }
 
 const Main: React.FC<content> = ({ arrContent, sendInfo }) => {
+  const [contentProductions, setContentProductions] = useState([])
+
   const { pathname } = useRouter()
-  const contentProductions = arrContent
-  console.log(arrContent)
+  // const contentProductions = arrContent
+  useEffect(() => {
+    setContentProductions(arrContent)
+  }, [])
+
+  console.log(contentProductions)
 
   return (
     <Container>

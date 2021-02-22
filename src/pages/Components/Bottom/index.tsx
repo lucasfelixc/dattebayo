@@ -22,12 +22,6 @@ const Bottom: React.FC<content> = ({
 }) => {
   const [moreInfo, setMoreInfo] = useState(false)
 
-  console.log(title)
-  console.log(youtubeVideoId)
-  console.log(averageRating)
-  console.log(ageRatingGuide)
-  console.log(synopsis)
-
   const handleClickInfo = () => {
     if (title) {
       setMoreInfo(!moreInfo)
