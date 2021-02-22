@@ -4,8 +4,6 @@ import Image from 'next/image'
 import { Container, Content } from '../../../styles/pages/components/Main'
 import { useEffect, useState } from 'react'
 
-import api from '../../../service/api'
-
 interface content {
   sendInfo: (
     title: string,
@@ -44,8 +42,6 @@ const Main: React.FC<content> = ({ arrContent, sendInfo }) => {
   useEffect(() => {
     setContentProductions(arrContent)
   }, [arrContent])
-
-  console.log(contentProductions)
 
   return (
     <Container>
