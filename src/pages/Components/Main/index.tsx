@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { Container, Content } from '../../../styles/pages/components/Main'
 import { useEffect, useState } from 'react'
 
+import api from '../../../service/api'
+
 interface content {
   sendInfo: (
     title: string,
@@ -38,10 +40,10 @@ const Main: React.FC<content> = ({ arrContent, sendInfo }) => {
   const [contentProductions, setContentProductions] = useState([])
 
   const { pathname } = useRouter()
-  // const contentProductions = arrContent
+
   useEffect(() => {
     setContentProductions(arrContent)
-  }, [])
+  }, [arrContent])
 
   console.log(contentProductions)
 
