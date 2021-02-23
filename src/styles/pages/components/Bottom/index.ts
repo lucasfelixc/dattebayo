@@ -12,12 +12,12 @@ interface showMore {
 
 export const Container = styled.div<showMore>`
   width: 100%;
-  height: 18vh;
+  height: 20%;
 
   display: flex;
   flex-direction: column;
 
-  margin-top: 10px;
+  /* margin-top: 10px; */
 
   background: ${props => props.theme.colors.backgroundLight};
   box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.25);
