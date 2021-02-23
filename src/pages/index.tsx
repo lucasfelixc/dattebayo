@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { Container } from '../styles/pages/Home'
+import { Container, Shadow } from '../styles/pages/Home'
 
 import Header from './Components/Header'
 import Main from './Components/Main'
@@ -17,6 +17,8 @@ const Home: React.FC = () => {
   const [averagea, setAveragea] = useState('')
   const [age, setAge] = useState('')
   const [synopsis, setSynopsis] = useState('')
+
+  const [shadow, setShadow] = useState(false)
 
   const average = []
 
@@ -44,6 +46,14 @@ const Home: React.FC = () => {
     setSynopsis(synopsis)
   }
 
+  const creationDivShadow = (more: boolean) => {
+    setShadow(more)
+  }
+
+  const handleShadowClick = () => {
+    setShadow(!shadow)
+  }
+
   animes.map(value => {
     return average.push(value)
   })
@@ -60,6 +70,7 @@ const Home: React.FC = () => {
 
   return (
     <Container>
+      <Shadow show={shadow} onClick={handleShadowClick} />
       <Header />
       <div className="contentLine">
         <div className="line"></div>
@@ -71,6 +82,8 @@ const Home: React.FC = () => {
         averageRating={averagea}
         ageRatingGuide={age}
         synopsis={synopsis}
+        sendInfoDiv={creationDivShadow}
+        receivedIndoDiv={shadow}
       />
     </Container>
   )

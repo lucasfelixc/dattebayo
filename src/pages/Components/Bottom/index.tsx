@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 import { Container } from '@styles/pages/components/Bottom'
@@ -11,6 +11,8 @@ interface content {
   averageRating: string
   ageRatingGuide: string
   synopsis: string
+  sendInfoDiv: (more: boolean) => void
+  receivedIndoDiv: boolean
 }
 
 const Bottom: React.FC<content> = ({
@@ -18,13 +20,20 @@ const Bottom: React.FC<content> = ({
   youtubeVideoId,
   averageRating,
   ageRatingGuide,
-  synopsis
+  synopsis,
+  sendInfoDiv,
+  receivedIndoDiv
 }) => {
   const [moreInfo, setMoreInfo] = useState(false)
+
+  useEffect(() => {
+    setMoreInfo(receivedIndoDiv)
+  }, [receivedIndoDiv])
 
   const handleClickInfo = () => {
     if (title) {
       setMoreInfo(!moreInfo)
+      sendInfoDiv(!moreInfo)
     } else {
       setMoreInfo(false)
     }
