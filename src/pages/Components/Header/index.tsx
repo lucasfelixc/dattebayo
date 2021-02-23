@@ -18,7 +18,9 @@ const Header: React.FC = () => {
   return (
     <Container>
       <div className="contentLogo">
-        <LogoMin />
+        <Link href="/">
+          <LogoMin />
+        </Link>
       </div>
       <MenuSection on={on}>
         <MenuToggle className="menuToogle" onClick={handleCloseDisplay}>
@@ -29,7 +31,7 @@ const Header: React.FC = () => {
 
         <div className="nav">
           <Link href="/animes">Animes</Link>
-          <Link href="/#">Mangás</Link>
+          <Link href="/mangas">Mangás</Link>
         </div>
       </MenuSection>
     </Container>

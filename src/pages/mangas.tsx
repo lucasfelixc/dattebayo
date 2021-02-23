@@ -6,11 +6,11 @@ import Bottom from './Components/Bottom'
 
 import api from '../service/api'
 
-import { Container } from '@styles/pages/Animes'
+import { Container } from '@styles/pages/Mangas'
 import { Shadow } from '@styles/pages/Home'
 
-const Animes: React.FC = () => {
-  const [animes, setAnimes] = useState([])
+const Mangas: React.FC = () => {
+  const [mangas, setMangas] = useState([])
 
   const [title, setTitle] = useState('')
   const [idYoutube, setIdYoutube] = useState('')
@@ -21,8 +21,8 @@ const Animes: React.FC = () => {
   const [shadow, setShadow] = useState(false)
 
   useEffect(() => {
-    api.get('/anime').then(response => {
-      setAnimes(response.data.data)
+    api.get('/manga').then(response => {
+      setMangas(response.data.data)
     })
   }, [])
 
@@ -52,7 +52,7 @@ const Animes: React.FC = () => {
     <Container>
       <Shadow show={shadow} onClick={handleShadowClick} />
       <Header />
-      <Main arrContent={animes} sendInfo={returnValues} />
+      <Main arrContent={mangas} sendInfo={returnValues} />
       <Bottom
         title={title}
         youtubeVideoId={idYoutube}
@@ -66,4 +66,4 @@ const Animes: React.FC = () => {
   )
 }
 
-export default Animes
+export default Mangas

@@ -61,11 +61,12 @@ const Main: React.FC<content> = ({ arrContent, sendInfo }) => {
                   value.attributes.titles.en === null ||
                   value.attributes.titles.en === undefined
                 ) {
-                  console.log(value.attributes.titles.en_jp)
                   sendInfo(
                     value.attributes.titles.en_jp,
                     value.attributes.youtubeVideoId,
-                    value.attributes.averageRating,
+                    value.attributes.averageRating === null
+                      ? '-'
+                      : value.attributes.averageRating,
                     value.attributes.ageRatingGuide === null ||
                       value.attributes.ageRatingGuide === ''
                       ? '10+'
@@ -76,7 +77,9 @@ const Main: React.FC<content> = ({ arrContent, sendInfo }) => {
                   sendInfo(
                     value.attributes.titles.en,
                     value.attributes.youtubeVideoId,
-                    value.attributes.averageRating,
+                    value.attributes.averageRating === null
+                      ? '-'
+                      : value.attributes.averageRating,
                     value.attributes.ageRatingGuide === null ||
                       value.attributes.ageRatingGuide === ''
                       ? '10+'

@@ -13,12 +13,24 @@ export const Container = styled.div`
   align-items: center;
 
   padding: 0 20px;
+
+  .contentLogo {
+    cursor: pointer;
+  }
 `
 
 export const MenuSection = styled.div<OpenDisplay>`
   .nav {
     display: none;
   }
+
+  ${props => {
+    if (props.on === false) {
+      return css`
+        cursor: pointer;
+      `
+    }
+  }}
 
   ${props => {
     if (props.on) {

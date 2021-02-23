@@ -62,7 +62,11 @@ const Bottom: React.FC<content> = ({
         <>
           <div className="indicators">
             <div className="relevant">
-              <span>{`${averageRating}%`}</span>
+              <span>
+                {averageRating === '-'
+                  ? `${averageRating}`
+                  : `${averageRating}%`}
+              </span>
             </div>
             <div className="ageRating">
               <span>{ageRatingGuide}</span>
