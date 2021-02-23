@@ -6,12 +6,6 @@ const slideMoreInfo = keyframes`
   }
 `
 
-// const slideLessInfo = keyframes`
-//   to {
-//     transform: translateY(0)
-//   }
-// `
-
 interface showMore {
   more: boolean
 }
@@ -148,7 +142,7 @@ export const Container = styled.div<showMore>`
       return css`
         height: 80vh;
 
-        position: absolute;
+        position: fixed;
         z-index: 20;
 
         animation: ${slideMoreInfo} 0.3s ease-in-out forwards;

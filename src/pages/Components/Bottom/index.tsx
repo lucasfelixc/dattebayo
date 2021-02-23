@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-import { Container } from '../../../styles/pages/components/Bottom'
+import { Container } from '@styles/pages/components/Bottom'
 
-import PlayMin from '../../../assets/icons/playmin.svg'
+import PlayMin from '@assets/icons/playmin.svg'
 
 interface content {
   title: string
