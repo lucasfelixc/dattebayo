@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { Container, Shadow } from '../styles/pages/Home'
+import { Container, Shadow } from '@styles/pages/Home'
 
 import Header from './Components/Header'
 import Main from './Components/Main'
@@ -66,8 +66,6 @@ const Home: React.FC = () => {
     return b.attributes.averageRating - a.attributes.averageRating
   })
 
-  const updatedAverage = average.slice(0, 4)
-
   return (
     <Container>
       <Shadow show={shadow} onClick={handleShadowClick} />
@@ -75,7 +73,7 @@ const Home: React.FC = () => {
       <div className="contentLine">
         <div className="line"></div>
       </div>
-      <Main sendInfo={returnValues} arrContent={updatedAverage} />
+      <Main sendInfo={returnValues} arrContent={average.slice(0, 4)} />
       <Bottom
         title={title}
         youtubeVideoId={idYoutube}

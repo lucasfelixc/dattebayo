@@ -47,6 +47,8 @@ const Main: React.FC<content> = ({ arrContent, sendInfo }) => {
     <Container>
       <div className="contentCall">
         {pathname === '/' && <strong>Em alta</strong>}
+        {pathname === '/animes' && <strong>Animes</strong>}
+        {pathname === '/mangas' && <strong>Mangas</strong>}
       </div>
       <Content>
         {contentProductions.map((value, index) => {
@@ -55,7 +57,11 @@ const Main: React.FC<content> = ({ arrContent, sendInfo }) => {
               className="top"
               key={index}
               onClick={() => {
-                if (value.attributes.titles.en === null) {
+                if (
+                  value.attributes.titles.en === null ||
+                  value.attributes.titles.en === undefined
+                ) {
+                  console.log(value.attributes.titles.en_jp)
                   sendInfo(
                     value.attributes.titles.en_jp,
                     value.attributes.youtubeVideoId,
